@@ -4,8 +4,4 @@
 
 ## https://agzes.netlify.app
 ![Main > Bio](ReadMe/main-bio.png)
-
-## https://agzes.netlify.app/fluautoclicker
-![FluAutoClicker > Main](ReadMe/FAC_Main.png)
-![FluAutoClicker > KeyFeature](ReadMe/FAC_KeyFeature.png)
-![FluAutoClicker > Footer](ReadMe/FAC_Footer.png) 
+![Projects > Bio](ReadMe/projects-bio.png)
