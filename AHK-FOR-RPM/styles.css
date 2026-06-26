@@ -40,6 +40,15 @@ body {
     padding: 20px;
 }
 
+.freeze-banner {
+    background: #B22222;
+    color: #FFD7D7;
+    text-align: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
 header {
     background: linear-gradient(135deg, var(--primary-dark), var(--secondary-color));
     padding: 2rem 0;

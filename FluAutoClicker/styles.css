@@ -10,6 +10,23 @@
     --fluent-shadow: rgba(0, 0, 0, 0.3);
 }
 
+.outdated-banner {
+    background: #B8860B;
+    color: #FFF3CD;
+    text-align: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.banner-link {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.banner-link:hover {
+    color: #FFE484;
+}
+
 * {
     margin: 0;
     padding: 0;
