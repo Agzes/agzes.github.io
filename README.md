@@ -2,10 +2,10 @@
 <div align="center">
 
 <h2>
-  
- https://agzes.github.io
-  /
- https://agzes.netlify.app
+
+https://agzes.github.io
+/
+https://agzes.netlify.app
 
 </h2>
 
