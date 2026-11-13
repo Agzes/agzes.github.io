@@ -2,39 +2,106 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="agzes - 404 not found" />
-        <title>agzes - 404</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <meta name="description" content="Page not found." />
+        <title>agzes/404</title>
+        <script>
+            (function () {
+                var path = window.location.pathname;
+                var lower = path.toLowerCase();
+                if (
+                    lower === "/ahk-for-rpm" ||
+                    lower.indexOf("/ahk-for-rpm/") === 0
+                ) {
+                    window.location.replace(
+                        "https://github.com/Agzes/AHK-FOR-RPM",
+                    );
+                    return;
+                }
+                var map = {
+                    "/afr": "/AFR",
+                    "/fluautoclicker": "/FluAutoClicker",
+                };
+                for (var prefix in map) {
+                    if (lower === prefix || lower.indexOf(prefix + "/") === 0) {
+                        var target = map[prefix] + path.slice(prefix.length);
+                        if (
+                            window.location.hostname === "agzes.github.io" &&
+                            target === path
+                        ) {
+                            return;
+                        }
+                        window.location.replace(
+                            "https://agzes.github.io" +
+                                target +
+                                window.location.search +
+                                window.location.hash,
+                        );
+                        return;
+                    }
+                }
+            })();
+        </script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Montserrat:wght@300;400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Geologica:wght@300..900&family=Montserrat+Alternates:wght@900&display=swap"
             rel="stylesheet"
         />
 
         <link rel="icon" type="image/png" href="favicon.png" />
 
-        <meta property="og:title" content="@agzes - 404" />
+        <meta property="og:title" content="agzes/404" />
+        <meta property="og:description" content="Page not found." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agzes.github.io/404" />
-        <meta name="theme-color" content="#898989" />
-        <meta property="og:image" content="https://agzes.github.io/p.png" />
-        <meta property="og:image:alt" content="@agzes" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="@agzes - 404" />
+        <meta name="theme-color" content="#0a0a0b" />
+        <meta
+            property="og:image"
+            content="https://agzes.github.io/favicon.png"
+        />
+        <meta property="og:image:alt" content="agzes" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="agzes/404" />
         <meta name="twitter:description" content="Page not found." />
 
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="site.css" />
+        <noscript>
+            <link rel="stylesheet" href="nojs.css" />
+        </noscript>
     </head>
 
-    <body>
-        <div class="content not-found-content">
-            <div class="not-found-inner">
-                <h1>404</h1>
-                <a href="/">back to main</a>
-            </div>
-        </div>
-        <canvas id="c"></canvas>
-        <script src="script.js"></script>
+    <body class="error-page">
+        <h1 class="sr-only">agzes - page not found</h1>
+
+        <canvas id="glCanvas" data-text="404" aria-hidden="true"></canvas>
+        <div class="fallback-title" aria-hidden="true"><span>404</span></div>
+        <div class="vignette" aria-hidden="true"></div>
+        <div class="top-fade" aria-hidden="true"></div>
+
+        <main class="content">
+            <section class="hero" aria-label="Not found">
+                <div class="hero-meta" id="heroMeta">
+                    <div class="hero-kicker">404</div>
+                    <p class="hero-desc">Page not found.</p>
+                    <nav class="hero-links" aria-label="Links">
+                        <a class="btn" href="index.html">home</a>
+                        <a
+                            class="btn"
+                            href="https://github.com/agzes"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >github</a
+                        >
+                        <a class="btn" href="mailto:agzes0@proton.me">mail</a>
+                    </nav>
+                </div>
+            </section>
+        </main>
+
+        <script src="site.js"></script>
     </body>
 </html>

@@ -2,203 +2,288 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
         <meta name="description" content="agzes - open-source developer" />
         <title>agzes</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Montserrat:wght@300;400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Geologica:wght@300..900&family=Montserrat+Alternates:wght@900&display=swap"
             rel="stylesheet"
         />
 
         <link rel="icon" type="image/png" href="favicon.png" />
 
-        <meta property="og:title" content="@agzes" />
+        <meta property="og:title" content="agzes" />
+        <meta
+            property="og:description"
+            content="agzes - open-source developer"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://agzes.github.io" />
-        <meta name="theme-color" content="#898989" />
-        <meta property="og:image" content="https://agzes.github.io/p.png" />
-        <meta property="og:image:alt" content="@agzes" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="@agzes" />
+        <meta name="theme-color" content="#0a0a0b" />
+        <meta
+            property="og:image"
+            content="https://agzes.github.io/favicon.png"
+        />
+        <meta property="og:image:alt" content="agzes" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="agzes" />
         <meta
             name="twitter:description"
-            content="Agzes - open-source developer."
+            content="agzes - open-source developer"
         />
 
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="site.css" />
+        <noscript>
+            <link rel="stylesheet" href="nojs.css" />
+        </noscript>
     </head>
 
     <body>
-        <div class="content">
-            <div class="hero">
-                <div class="hero-inner">
-                    <h1>agzes</h1>
-                    <div class="hero-status">
-                        <span>open-source</span><span>developer</span>
+        <h1 class="sr-only">agzes - open-source developer</h1>
+
+        <canvas id="glCanvas" aria-hidden="true"></canvas>
+        <div class="fallback-title" aria-hidden="true"><span>agzes</span></div>
+        <div class="vignette" aria-hidden="true"></div>
+        <div class="top-fade" aria-hidden="true"></div>
+
+        <main class="content">
+            <section class="hero" aria-label="Intro">
+                <div class="hero-meta" id="heroMeta">
+                    <div class="hero-kicker">open-source developer</div>
+                    <div class="hero-stack">
+                        <span>AHK v2</span><span>Python</span><span>Lua</span
+                        ><span>C++</span><span>Rust</span><span>Linux</span
+                        ><span>Windows</span><span>Git</span>
                     </div>
-                    <div class="hero-links">
+                    <nav class="hero-links" aria-label="Social links">
                         <a
+                            class="btn"
                             href="https://github.com/agzes"
                             target="_blank"
                             rel="noopener noreferrer"
                             >github</a
                         >
                         <a
+                            class="btn"
                             href="https://agzes.github.io/go/to/discord"
                             target="_blank"
                             rel="noopener noreferrer"
                             >discord</a
                         >
                         <a
+                            class="btn"
                             href="https://steamcommunity.com/id/agzes_/"
                             target="_blank"
                             rel="noopener noreferrer"
                             >steam</a
                         >
-                        <a href="mailto:agzes0@proton.me">mail</a>
-                        <a href="/donate">donate</a>
-                    </div>
+                        <a class="btn" href="mailto:agzes0@proton.me">mail</a>
+                        <a class="btn" href="donate.html">donate</a>
+                    </nav>
                 </div>
-            </div>
-            <div class="info-wrapper">
-                <div class="info-panel">
-                    <div class="stack">
-                        <div>AHK V2</div>
-                        <div>Python</div>
-                        <div>Lua</div>
-                        <div>C++</div>
-                        <div>Rust</div>
-                        <div>Linux</div>
-                        <div>Windows</div>
-                        <div>Git</div>
-                    </div>
-                    <div class="project-list">
+            </section>
+
+            <noscript
+                ><div class="nojs-park" aria-hidden="true">
+                    <span>agzes</span>
+                </div></noscript
+            >
+
+            <section class="work-section" aria-label="Projects">
+                <div class="work-inner">
+                    <div class="work-heading">projects</div>
+                    <div class="project-grid">
                         <a
+                            class="project-cell"
+                            data-repo="agzes/antiafk-rbx"
                             href="https://github.com/agzes/antiafk-rbx"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-row"
                         >
-                            <h3>AntiAFK-RBX</h3>
-                            <p>
-                                Advanced automation tool for multi-instance
-                                management and anti-AFK tasks in Roblox.
-                            </p>
-                        </a>
-                        <a
-                            href="https://github.com/agzes/fluautoclicker"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-row"
-                        >
-                            <h3>FluAutoClicker</h3>
-                            <p>
-                                Universal cross-platform automation for mouse,
-                                keyboard and macros with high-precision input
-                                emulation.
-                            </p>
-                        </a>
-                        <a
-                            href="https://github.com/agzes/ontytask"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-row"
-                        >
-                            <h3>OntyTask</h3>
-                            <p>
-                                OntyTask is a lightweight, zero-install macro
-                                recorder for Windows. (FOSS TinyTask Alt)
-                            </p>
+                            <span class="project-top">
+                                <span class="project-stars"></span>
+                            </span>
+                            <span class="project-name">AntiAFK-RBX</span>
+                            <span class="project-desc"
+                                >Multi-instance management and anti-AFK
+                                automation for Roblox.</span
+                            >
                         </a>
 
                         <a
+                            class="project-cell"
+                            data-repo="agzes/fluautoclicker"
+                            href="https://github.com/agzes/fluautoclicker"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span class="project-top">
+                                <span class="project-stars"></span>
+                            </span>
+                            <span class="project-name">FluAutoClicker</span>
+                            <span class="project-desc"
+                                >Cross-platform mouse, keyboard, and macro
+                                automation.</span
+                            >
+                        </a>
+
+                        <a
+                            class="project-cell"
+                            data-repo="agzes/ontytask"
+                            href="https://github.com/agzes/ontytask"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span class="project-top">
+                                <span class="project-stars"></span>
+                            </span>
+                            <span class="project-name">OntyTask</span>
+                            <span class="project-desc"
+                                >Lightweight, zero-install macro recorder for
+                                Windows. (FOSS TinyTask alt)</span
+                            >
+                        </a>
+
+                        <a
+                            class="project-cell"
+                            data-repo="agzes/antiafk-rbx-sober"
                             href="https://github.com/agzes/antiafk-rbx-sober"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-row"
                         >
-                            <h3>AntiAFK-RBX-Sober</h3>
-                            <p>
-                                Specialized automation utility designed for
-                                anti-AFK and instance control on Sober.
-                            </p>
+                            <span class="project-top">
+                                <span class="project-stars"></span>
+                            </span>
+                            <span class="project-name">AntiAFK-RBX-Sober</span>
+                            <span class="project-desc"
+                                >Anti-AFK and instance control for the Sober
+                                client.</span
+                            >
                         </a>
+
                         <a
+                            class="project-cell"
+                            data-repo="agzes/totray"
                             href="https://github.com/agzes/totray"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-row"
                         >
-                            <h3>ToTray</h3>
-                            <p>
-                                Streamlined AutoRun utility designed for
-                                efficient system tray management in Hyprland.
-                            </p>
+                            <span class="project-top">
+                                <span class="project-stars"></span>
+                            </span>
+                            <span class="project-name">ToTray</span>
+                            <span class="project-desc"
+                                >AutoRun and system tray utility for
+                                Hyprland.</span
+                            >
                         </a>
+
                         <a
+                            class="project-cell"
+                            data-repo="agzes/swebapp"
                             href="https://github.com/agzes/swebapp"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-row"
                         >
-                            <h3>SWebApp</h3>
-                            <p>
-                                Simple and lightweight HTTP server runner
-                                designed for local hosting on Android.
-                            </p>
+                            <span class="project-top">
+                                <span class="project-stars"></span>
+                            </span>
+                            <span class="project-name">SWebApp</span>
+                            <span class="project-desc"
+                                >Lightweight local HTTP server runner for
+                                Android.</span
+                            >
                         </a>
+
                         <a
+                            class="project-cell"
+                            data-repo="agzes/ahk-for-rpm"
                             href="https://github.com/agzes/ahk-for-rpm"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-row"
                         >
-                            <h3>AHK-FOR-RPM</h3>
-                            <p>
-                                AutoHotKey v2 script for automated role-play
-                                actions and system optimization.
-                            </p>
+                            <span class="project-top">
+                                <span class="project-stars"></span>
+                            </span>
+                            <span class="project-name">AHK-FOR-RPM</span>
+                            <span class="project-desc"
+                                >AutoHotkey v2 script for roleplay actions and
+                                system tasks.</span
+                            >
                         </a>
+
                         <a
+                            class="project-cell"
+                            data-repo="agzes/spp-in-soundux"
                             href="https://github.com/agzes/spp-in-soundux"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-row"
                         >
-                            <h3>SPP-IN-Soundux</h3>
-                            <p>
-                                Implementation of the SoundPad Protocol for
-                                Soundux to enable seamless audio integration.
-                            </p>
+                            <span class="project-top">
+                                <span class="project-stars"></span>
+                            </span>
+                            <span class="project-name">SPP-IN-Soundux</span>
+                            <span class="project-desc"
+                                >SoundPad Protocol implementation for
+                                Soundux.</span
+                            >
                         </a>
+
                         <a
+                            class="project-cell"
                             href="https://github.com/agzes/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-row"
                         >
-                            <h3>And more...</h3>
-                            <p>See all project on github.</p>
+                            <span class="project-top">
+                                <span class="project-stars"></span>
+                            </span>
+                            <span class="project-name">And more...</span>
+                            <span class="project-desc"
+                                >See all projects on GitHub.</span
+                            >
                         </a>
                     </div>
-                    <div class="footer">
-                        <span>MIT License © 2026 agzes</span>
-                        <div style="display: flex; gap: 20px">
-                            <a href="/donate">Donate</a>
-                            <a
-                                href="https://github.com/Agzes/agzes.github.io"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                >View Source</a
+
+                    <footer class="site-footer">
+                        <div class="footer-meta">
+                            <noscript>
+                                <span class="footer-nojs">[no-js]</span>
+                            </noscript>
+                            <span class="footer-license"
+                                >MIT License © 2026 agzes</span
                             >
                         </div>
-                    </div>
+                        <nav class="footer-links">
+                            <a
+                                class="btn"
+                                href="https://github.com/agzes"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >github</a
+                            >
+                            <a
+                                class="btn"
+                                href="https://agzes.github.io/go/to/discord"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >discord</a
+                            >
+                            <a class="btn" href="mailto:agzes0@proton.me"
+                                >mail</a
+                            >
+                            <a class="btn" href="donate.html">donate</a>
+                        </nav>
+                    </footer>
                 </div>
-            </div>
-        </div>
-        <canvas id="c"></canvas>
-        <script src="script.js"></script>
+            </section>
+        </main>
+
+        <script src="site.js"></script>
     </body>
 </html>

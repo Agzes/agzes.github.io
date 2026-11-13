@@ -1,0 +1,273 @@
+#glCanvas,
+.top-fade {
+    display: none !important;
+}
+
+.fallback-title {
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100svh;
+    margin: 0;
+    font-family: var(--display);
+    font-size: min(26.2vw, 60vh);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    color: rgba(var(--fg-rgb), 0.92);
+    pointer-events: none;
+    user-select: none;
+}
+
+.nojs-park span {
+    display: block;
+    padding-bottom: 0.22em;
+}
+
+.fallback-title::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(
+            ellipse 55% 34% at 50% 103%,
+            rgba(var(--accent-rgb), 0.58) 0%,
+            rgba(var(--accent-rgb), 0.34) 25%,
+            rgba(var(--accent-rgb), 0.14) 50%,
+            transparent 72%
+        ),
+        radial-gradient(
+            ellipse 105% 62% at 50% 106%,
+            rgba(var(--accent-rgb), 0.46) 0%,
+            rgba(var(--accent-rgb), 0.38) 20%,
+            rgba(var(--accent-rgb), 0.32) 40%,
+            rgba(var(--accent-rgb), 0.2) 60%,
+            transparent 84%
+        ),
+        radial-gradient(rgba(var(--fg-rgb), 0.045) 1px, transparent 1px);
+    background-size:
+        auto,
+        auto,
+        4px 4px;
+}
+
+.error-page .fallback-title {
+    font-size: min(40.5vw, 60vh);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .fallback-title span,
+    .nojs-park span {
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        background-image:
+            radial-gradient(rgba(8, 8, 10, 0.16) 0.7px, transparent 1.1px),
+            linear-gradient(
+                180deg,
+                #ffffff 0%,
+                #f6f6f6 45%,
+                #dcdcdc 80%,
+                #a8a8a8 100%
+            );
+        background-size:
+            3px 3px,
+            100% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    .fallback-title span {
+        background-image:
+            radial-gradient(rgba(8, 8, 10, 0.16) 0.7px, transparent 1.1px),
+            linear-gradient(
+                180deg,
+                #ffffff 0%,
+                #ededed 32%,
+                #d2d2d2 43%,
+                #a4a4a4 52%,
+                #808080 62%,
+                #4e4e4e 72%,
+                #454545 83%,
+                #3a3a3a 100%
+            );
+        -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 80%);
+        mask-image: linear-gradient(180deg, #000 70%, transparent 80%);
+    }
+
+    body.donate-page .fallback-title span {
+        background-image:
+            radial-gradient(rgba(8, 8, 10, 0.16) 0.7px, transparent 1.1px),
+            linear-gradient(
+                180deg,
+                #ffffff 0%,
+                #f6f6f6 45%,
+                #dcdcdc 80%,
+                #a8a8a8 100%
+            );
+        padding-bottom: 0.22em;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    .fallback-title {
+        filter: drop-shadow(0 0 0.16em rgba(var(--accent-rgb), 0.16));
+    }
+
+    .nojs-park span {
+        filter: drop-shadow(0 0 0.16em rgba(var(--accent-rgb), 0.16));
+    }
+}
+
+.nojs-park {
+    position: sticky;
+    top: 0;
+    z-index: 45;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 27vh;
+    padding: max(0px, calc(12.8vh - 0.567 * min(8.1vw, 18.75vh))) 0 0.8rem;
+    font-family: var(--display);
+    font-size: min(8.1vw, 18.75vh);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    color: rgba(var(--fg-rgb), 0.92);
+    pointer-events: none;
+    user-select: none;
+}
+
+.nojs-park::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 28vh;
+    z-index: -1;
+    background: linear-gradient(
+        to bottom,
+        rgba(var(--scrim-rgb), 1) 0,
+        rgba(var(--scrim-rgb), 1) 19vh,
+        rgba(var(--scrim-rgb), 0) 28vh
+    );
+}
+
+@supports (animation-timeline: scroll()) {
+    .nojs-park {
+        animation: nojs-park-in linear both;
+        animation-timeline: scroll(root block);
+        animation-range: 85vh 100vh;
+    }
+
+    @keyframes nojs-park-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+.work-section {
+    padding-top: 3vh;
+}
+
+body.donate-page .fallback-title {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: auto;
+    padding: max(0px, calc(12.8vh - 0.567 * min(8.1vw, 18.75vh))) 5% 0;
+    font-size: min(8.1vw, 18.75vh);
+    text-align: center;
+}
+
+body.donate-page .fallback-title::before {
+    display: none;
+}
+
+body.donate-page .work-section {
+    padding-top: 26vh;
+}
+
+body.donate-page .wallet-actions {
+    display: none;
+}
+
+body.donate-page .wallet {
+    cursor: default;
+}
+
+body.donate-page .wallet-address {
+    color: var(--fg);
+    cursor: text;
+    -webkit-user-select: all;
+    user-select: all;
+}
+
+.footer-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.footer-nojs {
+    font-family: var(--sans);
+    font-size: inherit;
+    line-height: inherit;
+    white-space: nowrap;
+    color: rgba(var(--accent-rgb), 0.5);
+}
+
+.footer-hint {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    line-height: 1.4;
+    text-align: center;
+    color: rgba(var(--muted-rgb), 0.38);
+}
+
+@media (max-width: 640px) {
+    .nojs-park {
+        min-height: 20vh;
+    }
+
+    .work-section {
+        padding-top: 4vh;
+    }
+
+    body.donate-page .work-section {
+        padding-top: 22vh;
+    }
+}
+
+@media (max-height: 620px) {
+    .fallback-title {
+        font-size: min(26.2vw, 46vh);
+    }
+
+    .error-page .fallback-title {
+        font-size: min(40.5vw, 46vh);
+    }
+
+    .nojs-park {
+        min-height: 26vh;
+        font-size: min(8.1vw, 14.4vh);
+    }
+
+    body.donate-page .fallback-title {
+        font-size: min(8.1vw, 14.4vh);
+    }
+
+    .work-section {
+        padding-top: 4vh;
+    }
+}
