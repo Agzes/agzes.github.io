@@ -348,7 +348,9 @@
             const family = '"Montserrat Alternates", sans-serif';
             const weight = CONFIG.textWeight;
             const tracking = CONFIG.textTracking;
-            const targetWidth = w * CONFIG.textWidthRatio;
+            const widthRatio =
+                window.innerWidth < 640 ? 0.78 : CONFIG.textWidthRatio;
+            const targetWidth = w * widthRatio;
             const measureSize = 200;
 
             ctx.font = `${weight} ${measureSize}px ${family}`;

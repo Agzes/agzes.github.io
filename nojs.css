@@ -12,8 +12,9 @@
     justify-content: center;
     height: 100svh;
     margin: 0;
+    overflow: hidden;
     font-family: var(--display);
-    font-size: min(26.2vw, 60vh);
+    font-size: min(19vw, 60vh);
     font-weight: 900;
     line-height: 1;
     letter-spacing: 0.02em;
@@ -57,7 +58,7 @@
 }
 
 .error-page .fallback-title {
-    font-size: min(40.5vw, 60vh);
+    font-size: min(30vw, 60vh);
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {

@@ -23,6 +23,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -40,6 +41,7 @@ body {
 }
 
 @supports (overflow-x: clip) {
+    html,
     body {
         overflow-x: clip;
     }
@@ -120,8 +122,9 @@ body.no-webgl .fallback-title {
     justify-content: center;
     height: 100svh;
     margin: 0;
+    overflow: hidden;
     font-family: var(--display);
-    font-size: min(26.2vw, 60vh);
+    font-size: min(19vw, 60vh);
     font-weight: 900;
     line-height: 1;
     letter-spacing: 0.02em;
@@ -133,7 +136,7 @@ body.no-webgl .fallback-title {
 }
 
 body.no-webgl.error-page .fallback-title {
-    font-size: min(40.5vw, 60vh);
+    font-size: min(30vw, 60vh);
 }
 
 body.no-webgl.donate-page .fallback-title {
@@ -242,6 +245,7 @@ body.no-webgl .top-fade {
     margin: 0 0 1.25rem 0;
     font-family: var(--sans);
     font-size: 0.72rem;
+    line-height: 1.7;
     color: rgba(var(--muted-rgb), 0.42);
 }
 
@@ -307,7 +311,7 @@ body.no-webgl .top-fade {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    width: calc(100% + 1px);
+    width: 100%;
 }
 
 .work-heading {
@@ -367,6 +371,10 @@ body.no-webgl .top-fade {
     color: inherit;
     text-decoration: none;
     transition: background-color 0.18s ease;
+}
+
+.project-cell:nth-child(3n) {
+    border-right: 0;
 }
 
 .project-cell:hover {
@@ -495,17 +503,19 @@ body.no-webgl .top-fade {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .project-cell:last-of-type {
-        grid-column: 1 / -1;
-    }
-
-    .wallet:last-of-type {
-        grid-column: 1 / -1;
-    }
-
     .project-cell {
         min-height: 165px;
         padding: 1rem 1.2rem 0.9rem;
+        border-right: 1px solid var(--line);
+    }
+
+    .project-cell:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .project-cell:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        border-right: 0;
     }
 
     .project-name {
@@ -589,6 +599,7 @@ body.no-webgl .top-fade {
         min-height: 0;
         gap: 0.5rem;
         padding: 1rem 5% 0.9rem;
+        border-right: 0;
     }
 
     .project-name {
